@@ -19,8 +19,8 @@ const defaults = {
 };
 
 
-const collection = (array) => {
-    let array = _.cloneDeep(array);
+const collection = (arrayDefault) => {
+    let array = _.cloneDeep(arrayDefault);
     return {
         list: () => array,
         insert: (element) => array.push(element),

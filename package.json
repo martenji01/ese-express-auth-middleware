@@ -1,8 +1,8 @@
 {
-  "name": "ese-express",
+  "name": "ese-express-auth-middleware",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src",
   "type": "module",
   "scripts": {
     "start": "node .",
