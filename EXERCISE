@@ -1,0 +1,30 @@
+install express 
+=> npm install express
+
+import the express module
+=> import express from "express"
+
+create an object from the express function which we contains methods for making requests and starting the server
+=> const app = express();
+
+tell our server to listen on port 3000 and when the server starts, run a callback function that console.log's a message
+
+=> 
+app.listen(3000, function () {
+  console.log(
+    "The server has started on port 3000. Head to localhost:3000 in the browser and see what's there!"
+  );
+});
+
+------------------------------------------------
+
+For this exercise we will be building a simple application where we will store a shopping list. You should use an array to store your items in the shopping list.
+Our application should have the following routes:
+
+GET /items - this should respond with a list of shopping items. // GIA' IMPLEMENTATA
+POST /items - this route should accept form data and add it to the shopping list.
+GET /items/:id - this route should display a single item's name and price
+PATCH or PUT /items/:id - this route should accept edits to existing items.
+DELETE /items/:id - this route should allow you to delete a specific item from the array.
+
+Testare ogni route con POSTMAN
