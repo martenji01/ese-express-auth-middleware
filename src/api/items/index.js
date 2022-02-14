@@ -10,7 +10,7 @@ router.get("/", function (request, response) {
 });
 
 router.get("/:id", function (request, response) {
-  const element = _.find(db.items.list(), (i) => i.id.toString() === request.params.id)
+  const element = db.items.get(request.params.id)
   return element ? response.json(element) : response.sendStatus(404);
 });
 

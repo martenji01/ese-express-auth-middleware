@@ -2,8 +2,17 @@
     (copiare e incollare cambiando i nomi in pratica)
 2: fare in modo che in users le get non restituiscano la password (_.omit)
 3: aggiungere l'api "auth"
-  - aggiungere l'endpoint POST /login:  l'utente deve loggarsi con basic auth. effettuare il check dell'header della risposta per verificare che la password e l'utente siano corretti. Ricordarsi di decodificare i dati da base 64
-  - generare un JWT se l'utente è loggato correttamente e restituirlo, altrimenti restituire 401
+  - aggiungere l'endpoint POST /login:  l'utente deve loggarsi con basic auth. effettuare il check dell'header della risposta per verificare che la password e l'utente siano corretti. 
+    Ricordarsi di decodificare i dati da base 64 (const decoded = Buffer.from(request.headers.authorization.split(" ")[1], 'base64').toString('binary'))
+  - installare la libreria jsonwebtoken
+  - generare un JWT contentente l'id dell'utente loggato se l'utente è loggato correttamente
+    /**
+    jwt.sign({
+  user: {id:"[USERID]"}
+    }, 'secret');
+    **/
+  - restituire il jwt nella chiamata, altrimenti restituire 401
 4: scrivere un middleware per express che effettua il check negli header che la chiamata presenti un jwt valido. preferibilmente metterlo nei service
   - nel middleware controllare che esista un utente con l'id contenuto nel JWT
+    // var decoded = jwt.verify(request.headers.authorization.split(" ")[1], 'secret');
   - se il jwt è valido proseguire con lo step successivo del middleware
