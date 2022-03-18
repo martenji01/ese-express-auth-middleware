@@ -16,3 +16,9 @@
   - nel middleware controllare che esista un utente con l'id contenuto nel JWT
     // var decoded = jwt.verify(request.headers.authorization.split(" ")[1], 'secret');
   - se il jwt è valido proseguire con lo step successivo del middleware
+
+
+
+
+
+  //https://github.com/JAC-cloud-development/ese-express-auth-middleware-solution/blob/master/src/api/users/index.js
